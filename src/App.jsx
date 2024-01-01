@@ -1,9 +1,6 @@
 // src/App.jsx
-// src/App.jsx
 import React, { useState, useEffect } from 'react';
-
-// ...
-
+import axios from 'axios'; // Add this import
 import './index.css'; // Import the CSS file
 
 const API_KEY = '0bdfac883192067d1c60f2bf4e4b6944';
@@ -33,6 +30,9 @@ const Weather = () => {
           appid: API_KEY,
         },
       });
+
+      console.log('Weather API Response:', response.data);
+
       setWeatherData(response.data);
     } catch (error) {
       console.error('Error fetching weather data:', error);

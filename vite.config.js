@@ -1,7 +1,10 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+// vite.config.js
+import ViteExternals from 'vite-plugin-externals';
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react()],
-})
+export default {
+  plugins: [
+    ViteExternals({
+      externals: ['axios'], // Add any other external modules if needed
+    }),
+  ],
+};

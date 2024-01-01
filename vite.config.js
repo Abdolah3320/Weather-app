@@ -1,10 +1,9 @@
 // vite.config.js
-import ViteExternals from 'vite-plugin-externals';
+import react from '@vitejs/plugin-react';
 
 export default {
-  plugins: [
-    ViteExternals({
-      externals: ['axios'], // Add any other external modules if needed
-    }),
-  ],
+  plugins: [react()],
+  optimizeDeps: {
+    exclude: ['axios'],
+  },
 };
